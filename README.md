@@ -1,1 +1,1 @@
-# Borrador1_progra02
+# Repositorio de borrador para proyecto progra02
