@@ -664,6 +664,92 @@ background-color: rgb(255, 255, 255);</string>
                   <string>&gt;&gt;</string>
                  </property>
                 </widget>
+                <widget class="QLabel" name="label_9">
+                 <property name="geometry">
+                  <rect>
+                   <x>40</x>
+                   <y>370</y>
+                   <width>231</width>
+                   <height>61</height>
+                  </rect>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Comic Sans MS</family>
+                   <pointsize>10</pointsize>
+                   <weight>10</weight>
+                   <italic>false</italic>
+                   <bold>false</bold>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: rgb(255, 255, 255);
+font: 87 10pt &quot;Comic Sans MS&quot;;</string>
+                 </property>
+                 <property name="text">
+                  <string>5. MOSTRAR FOTO:</string>
+                 </property>
+                </widget>
+                <widget class="QLabel" name="label_10">
+                 <property name="geometry">
+                  <rect>
+                   <x>40</x>
+                   <y>300</y>
+                   <width>231</width>
+                   <height>61</height>
+                  </rect>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Comic Sans MS</family>
+                   <pointsize>10</pointsize>
+                   <weight>10</weight>
+                   <italic>false</italic>
+                   <bold>false</bold>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: rgb(255, 255, 255);
+font: 87 10pt &quot;Comic Sans MS&quot;;</string>
+                 </property>
+                 <property name="text">
+                  <string>4. CONECTAR :</string>
+                 </property>
+                </widget>
+                <widget class="QPushButton" name="base_datos">
+                 <property name="geometry">
+                  <rect>
+                   <x>330</x>
+                   <y>320</y>
+                   <width>93</width>
+                   <height>28</height>
+                  </rect>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">font: 10pt &quot;Vineta BT&quot;;
+background-color: rgb(255, 255, 255);</string>
+                 </property>
+                 <property name="text">
+                  <string>&gt;&gt;</string>
+                 </property>
+                </widget>
+                <widget class="QPushButton" name="mostrar_foto">
+                 <property name="geometry">
+                  <rect>
+                   <x>330</x>
+                   <y>380</y>
+                   <width>93</width>
+                   <height>28</height>
+                  </rect>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">font: 10pt &quot;Vineta BT&quot;;
+background-color: rgb(255, 255, 255);</string>
+                 </property>
+                 <property name="text">
+                  <string>&gt;&gt;</string>
+                 </property>
+                </widget>
                </widget>
               </item>
              </layout>
