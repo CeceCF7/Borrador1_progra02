@@ -1,9 +1,27 @@
 import mysql.connector
 from mysql.connector import Error
 
-import main as pb
-datos = pb.listay
-print(datos)
+datos1 = []
+datos = []
+archivo = open("base_datos.txt", "r")
+data = archivo.read()
+texto = data.replace("[\n", "").replace("\n]", "]").replace("\n", " ").replace("] ", "\n").replace("]", "")
+archivo.close()
+
+archivo = open("base_datos2.txt", "w")
+data = archivo.write(texto)
+archivo.close()
+
+archivo = open("base_datos2.txt", "r")
+lineas = archivo.readlines()
+for linea in lineas:
+	datos1.append(linea.strip('\n'))
+for dato in datos1:
+    datos.append(dato.split(" "))
+for dato in datos:
+    for i in range(len(dato)):
+        dato[i] = float(dato[i])
+archivo.close()
 
 for dato in datos:
     dato[0] = round(dato[0], 1)
@@ -14,7 +32,6 @@ for dato in datos:
     dato.pop(6)
     dato.pop(5)
     dato = tuple(dato)
-    print(type(dato))
 
 print(datos)
 
