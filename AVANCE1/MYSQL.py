@@ -53,14 +53,14 @@ try:
         db=my_database
         )
     cur = connection.cursor()
-    sql_1 = "INSERT INTO sensor (marca, modelo, angulo_vertical, angulo_horizontal, coordenadas) VALUES (%s, %s, %s, %s, %s)"
-    val_1 = ("genérica", "HC-SR04", 0, 0, "(0, 0, 0)") #EJEMPLO DATOS SENSOR
+    sql_1 = "INSERT INTO sensor (marca, modelo) VALUES (%s, %s)"
+    val_1 = ("genérica", "HC-SR04")
     cur.execute(sql_1, val_1)
-    sql_2 = "INSERT INTO camara (marca, modelo, angulo_vertical, angulo_horizontal, coordenadas) VALUES (%s, %s, %s, %s, %s)"
-    val_2 = ("genérica", "ESP32-CAM con cámara OV2640", 0, 0, "(0, 0, 0)") #EJEMPLO DATOS CÁMARA
+    sql_2 = "INSERT INTO camara (marca, modelo) VALUES (%s, %s)"
+    val_2 = ("genérica", "ESP32-CAM con cámara OV2640")
     cur.execute(sql_2, val_2)
-    sql_3 = "INSERT INTO esp32board (marca, modelo) VALUES (%s, %s)"
-    val_3 = ("genérica", "NODEMCU-32 30-PIN") #EJEMPLO DATOS ESP32-BOARD
+    sql_3 = "INSERT INTO arduinoboard (marca, modelo) VALUES (%s, %s)"
+    val_3 = ("genérica", "ARDUINO UNO")
     cur.execute(sql_3, val_3)
     sql_4 = "INSERT INTO obstaculos (label, confianza, distancia, angulo_vertical, angulo_horizontal) VALUES (%s, %s, %s, %s, %s)"
     val_4 = datos
