@@ -298,6 +298,40 @@ class MyApp(QMainWindow):
                 connection.close()
                 print("MySQL connection is closed")
 
+    def get_info(self):
+        #CREDENCIALES DE ACCESO
+        my_host = "localhost"
+        my_user = "root"
+        my_password = "valiente360"
+        my_database = "db_prueba"
+
+        # LISTA VACÍA PARA LAS DISTANCIAS
+        distancias = []
+        
+        try:
+            connection = mysql.connector.connect(
+                host=my_host,
+                user=my_user,
+                passwd=my_password,
+                db=my_database
+                )
+            cur = connection.cursor()
+            cur.execute("SELECT distancia FROM obstaculos")
+            for registro in cur.fetchall():
+                Distancia = registro[0]
+                distancias.append(Distancia)
+            print("Data has been retrieved successfully")
+        except Error as error:
+            print("Error al ejecutar el procedimiento: {}".format(error))
+        finally:
+            if (connection.is_connected()):
+                cur.close()
+                connection.close()
+                print("MySQL connection is closed")
+        
+        print(distancias)
+        #  "distancias" es la lista con las distancias de la base de datos
+    
     def control_bt_normal(self):
         self.showNormal()
         self.bt_normal.hide()
