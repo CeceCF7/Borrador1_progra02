@@ -41,7 +41,7 @@ print(datos)
 #CREDENCIALES PARA LA CONEXIÓN A MYSQL (CAMBIAR DE ACUERDO A LA COMPU)
 my_host = "localhost"
 my_user = "root"
-my_password = "password"
+my_password = "valiente360"
 my_database = "db_prueba"
 
 #SUBIR DATOS A DATABASE

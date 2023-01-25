@@ -6,7 +6,7 @@ try:
     db_prueba = mysql.connector.connect( #CAMBIAR CREDENCIALES DE ACCESO
         host="localhost",
         user="root",
-        password="password"
+        password="valiente360"
         )
     creation = db_prueba.cursor()
     creation.execute("CREATE DATABASE db_prueba")
@@ -23,7 +23,7 @@ try:
     connection = mysql.connector.connect( #CAMBIAR CREDENCIALES DE ACCESO
         host="localhost",
         user="root",
-        passwd="password",
+        passwd="valiente360",
         db="db_prueba"
         )
     cur = connection.cursor()
