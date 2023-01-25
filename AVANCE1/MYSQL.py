@@ -76,18 +76,9 @@ finally:
         print("MySQL connection is closed")
 
 #SACAR DATOS DE DATABASE
-idx = {
-            "Numero": 0,
-            "Label": 1,
-            "Confianza": 2,
-            "Distancia": 3,
-            "Angulo_vertical": 4,
-            "Angulo_horizontal": 5,
-        }
-
 class radar:
     def __init__(self):
-        self.obstaculos = dict()
+        self.obstaculos = []
     
     def load_all_obstaculos(self):
         try:
@@ -98,17 +89,12 @@ class radar:
                 db=my_database
                 )
             cur = connection.cursor()
-            cur.execute("SELECT * FROM obstaculos")
+            cur.execute("SELECT distancia FROM obstaculos")
             for registro in cur.fetchall():
                 obs = obstaculo()
-                Numero = registro[idx["Numero"]]
-                Label = registro[idx["Label"]]
-                Confianza = registro[idx["Confianza"]]
-                Distancia = registro[idx["Distancia"]]
-                Angulo_vertical = registro[idx["Angulo_vertical"]]
-                Angulo_horizontal = registro[idx["Angulo_horizontal"]]
-                obs.set_obstaculo(Numero, Label, Confianza, Distancia, Angulo_vertical, Angulo_horizontal)
-                self.obstaculos[Numero]= obs
+                Distancia = registro[0]
+                obs.set_obstaculo(Distancia)
+                self.obstaculos.append(obs)
             print("Obstacles have been loaded successfully")
         except Error as error:
             print("Error al ejecutar el procedimiento: {}".format(error))
@@ -121,29 +107,20 @@ class radar:
     def report_obstaculos(self):
         print(f"REPORTE DE OBSTÁCULOS")
         print(f"-------------------")
-        for clave in self.obstaculos:
-            print(self.obstaculos[clave])
+        for i in range(len(self.obstaculos)):
+            print(self.obstaculos[i])
 
 class obstaculo:
     def __init__(self):
-        self.numero = 0
-        self.label = 0
-        self.confianza = 0
         self.distancia = 0
-        self.angulo_v = 0
-        self.angulo_h = 0
     
     def __str__(self):
-        return f"El obstáculo número {self.numero}, de label {self.label}, se encuentra a una distancia de {self.distancia} con ángulo vertical {self.angulo_v} y ángulo horizontal {self.angulo_h} (Confianza: {self.confianza})"
+        return f"{self.distancia}"
     
-    def set_obstaculo(self, numero, label, confianza, distancia, angulo_v, angulo_h):
-        self.numero = numero
-        self.label = label
-        self.confianza = confianza
+    def set_obstaculo(self, distancia):
         self.distancia = distancia
-        self.angulo_v = angulo_v
-        self.angulo_h = angulo_h
 
 test = radar()
 test.load_all_obstaculos()
 test.report_obstaculos()
+distancias = test.obstaculos
